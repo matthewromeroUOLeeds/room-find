@@ -2,9 +2,13 @@ import type { NavigationGraph, NavigationNode } from '../../Data/src/types';
 
 export type WeightedEdge = { from: string, to: string, weight: number };
 
+export type Neighbour = { to: string, weight: number };
+
 export type RoutingGraph = {
     nodes: Map<string, NavigationNode>,
     edges: WeightedEdge[],
+    //edges are undirected, so each one appears in the lists of both of its nodes
+    adjacency: Map<string, Neighbour[]>,
 };
 
 //Straight-line distance in floorplan units. Edges are straight segments, so this is the walking distance.
@@ -26,5 +30,11 @@ export function buildGraph(graph: NavigationGraph): RoutingGraph {
         return {from: edge.from, to: edge.to, weight: distance(from, to)}
     })
 
-    return {nodes, edges}
+    const adjacency = new Map<string, Neighbour[]>(graph.nodes.map(node => [node.id, []]))
+    for (const edge of edges) {
+        adjacency.get(edge.from)?.push({to: edge.to, weight: edge.weight})
+        adjacency.get(edge.to)?.push({to: edge.from, weight: edge.weight})
+    }
+
+    return {nodes, edges, adjacency}
 }
