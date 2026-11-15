@@ -1,8 +1,9 @@
 import type { NavigationNode } from '../../Data/src/types';
 import type { RoutingGraph } from './graph';
+import { ENTRANCE_COLOUR } from './colours';
 
 const NODE_COLOURS: Record<NavigationNode['type'], string> = {
-    entrance: '#03d030',
+    entrance: ENTRANCE_COLOUR,
     door: 'blue',
     corridor: '#e8590c',
 }

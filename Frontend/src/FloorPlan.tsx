@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { FloorGeometry, Orientation, Point } from '../../Data/src/types';
+import { ENTRANCE_COLOUR, ROOM_HIGHLIGHT } from './colours';
 
 //End points of an opening (door or entrance) of the given length, centred on its position.
 function openingEnds(point: Point, orientation: Orientation, length = 1) {
@@ -10,7 +11,8 @@ function openingEnds(point: Point, orientation: Orientation, length = 1) {
 }
 
 //children are drawn on top of the floorplan, in floorplan coordinates (e.g. a navigation overlay)
-export default function FloorPlan({geometry, children}: {geometry: FloorGeometry, children?: ReactNode}) {
+//highlightRoomId shades one room, e.g. the destination of the current route
+export default function FloorPlan({geometry, highlightRoomId, children}: {geometry: FloorGeometry, highlightRoomId?: string | undefined, children?: ReactNode}) {
     const { width, height, outline, rooms, corridors, doors, entrances } = geometry
 
 
@@ -28,7 +30,8 @@ export default function FloorPlan({geometry, children}: {geometry: FloorGeometry
     const room_polygons = rooms.map((room) => {
         const [p1, p2, p3, p4] = room.room_points
         const points = `${p1.x},${p1.y} ${p2.x},${p2.y} ${p3.x},${p3.y} ${p4.x},${p4.y}`
-        return <polygon key={room.room_id} points={points} fill="none" stroke="black" strokeWidth={0.1}></polygon>
+        const fill = room.room_id === highlightRoomId ? ROOM_HIGHLIGHT : "none"
+        return <polygon key={room.room_id} points={points} fill={fill} stroke="black" strokeWidth={0.1}></polygon>
     })
 
     const room_labels = rooms.map((room) => {
@@ -45,7 +48,7 @@ export default function FloorPlan({geometry, children}: {geometry: FloorGeometry
 
     const entrance_geometry = entrances.map((entrance) => {
         return <line key={entrance.entrance_id} {...openingEnds(entrance.position, entrance.orientation)}
-                stroke="#03d030" strokeWidth={0.3} strokeLinecap='butt'></line>
+                stroke={ENTRANCE_COLOUR} strokeWidth={0.3} strokeLinecap='butt'></line>
     })
 
     const entrance_labels = entrances.map((entrance) => {
@@ -62,7 +65,7 @@ export default function FloorPlan({geometry, children}: {geometry: FloorGeometry
     
 
     return (
-        <svg viewBox={`-2 -1 ${width + 8} ${height + 2}`}>
+        <svg viewBox={`-2 -1 ${width + 8} ${height + 2}`} role="img" aria-label={`Floorplan of the ${geometry.floor_id} floor`}>
             {outline_polygon}
             {corridor_polygons}
             {room_polygons}
