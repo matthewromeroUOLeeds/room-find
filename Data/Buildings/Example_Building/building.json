@@ -1,4 +1,5 @@
 {
+    "id": "example_building",
     "name": "Example Building",
 
     "floors": [{
@@ -25,38 +26,44 @@
             "floor": "ground"
         },
         {
+            "id": "room_04",
+            "name": "Room 04",
+            "floor": "ground"
+
+        },
+        {
             "id": "room_05",
             "name": "Room 05",
             "floor": "ground"
-
         },
         {
             "id": "room_06",
             "name": "Room 06",
             "floor": "ground"
+
         },
         {
-            "id": "room_107",
-            "name": "Room 107",
+            "id": "room_07",
+            "name": "Room 07",
             "floor": "ground"
-
         },
         {
             "id": "room_08",
             "name": "Room 08",
             "floor": "ground"
+
         },
         {
             "id": "room_09",
             "name": "Room 09",
             "floor": "ground"
-
         },
         {
             "id": "room_10",
             "name": "Room 10",
             "floor": "ground"
-        }       
+
+        }   
     ],
 
     "entrances": [
