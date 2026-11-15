@@ -1,9 +1,17 @@
-import type { FloorGeometry } from './types/floorplan';
+import type { ReactNode } from 'react';
+import type { FloorGeometry, Orientation, Point } from '../../Data/src/types';
 
+//End points of an opening (door or entrance) of the given length, centred on its position.
+function openingEnds(point: Point, orientation: Orientation, length = 1) {
+    const half = length / 2
+    return orientation === 'horizontal'
+        ? {x1: point.x - half, y1: point.y, x2: point.x + half, y2: point.y}
+        : {x1: point.x, y1: point.y - half, x2: point.x, y2: point.y + half}
+}
 
-export default function FloorPlan({geometry}: {geometry: FloorGeometry}) {
+//children are drawn on top of the floorplan, in floorplan coordinates (e.g. a navigation overlay)
+export default function FloorPlan({geometry, children}: {geometry: FloorGeometry, children?: ReactNode}) {
     const { width, height, outline, rooms, corridors, doors, entrances } = geometry
-    console.log(entrances)
 
 
     const [out_p1, out_p2, out_p3, out_p4] = outline
@@ -14,33 +22,29 @@ export default function FloorPlan({geometry}: {geometry: FloorGeometry}) {
         const points_arr = corridor.points
         let points = ``
         points_arr.forEach(point => points += `${point.x},${point.y} `)
-        return <polygon points={points} fill="none" stroke="black" strokeWidth={0.1}></polygon>
+        return <polygon key={corridor.id} points={points} fill="none" stroke="black" strokeWidth={0.1}></polygon>
     })
 
     const room_polygons = rooms.map((room) => {
         const [p1, p2, p3, p4] = room.room_points
         const points = `${p1.x},${p1.y} ${p2.x},${p2.y} ${p3.x},${p3.y} ${p4.x},${p4.y}`
-        return <polygon points={points} fill="none" stroke="black" strokeWidth={0.1}></polygon>
+        return <polygon key={room.room_id} points={points} fill="none" stroke="black" strokeWidth={0.1}></polygon>
     })
 
     const room_labels = rooms.map((room) => {
         const id_label = room.room_id;
         const label_point = room.room_label;
 
-        return <text x={label_point.x} y={label_point.y} textAnchor="middle" fontSize={0.5}>{id_label}</text>
-    }) 
+        return <text key={room.room_id} x={label_point.x} y={label_point.y} textAnchor="middle" fontSize={0.5}>{id_label}</text>
+    })
 
-    //Note That door_geometry and entrance_geometry rely on set door orientations Specific to building. An orientation key should be added.
     const door_geometry = doors.map((door) => {
-        const door_point = door.position
-
-        return <line x1={door_point.x-0.5}y1={door_point.y}x2={door_point.x+0.5}y2={door_point.y} 
+        return <line key={door.room_id} {...openingEnds(door.position, door.orientation)}
                 stroke="blue" strokeWidth={0.2} strokeLinecap='butt'></line>
     })
 
     const entrance_geometry = entrances.map((entrance) => {
-        const entrance_point = entrance.position
-        return <line x1={entrance_point.x}y1={entrance_point.y-0.5}x2={entrance_point.x}y2={entrance_point.y+0.5} 
+        return <line key={entrance.entrance_id} {...openingEnds(entrance.position, entrance.orientation)}
                 stroke="#03d030" strokeWidth={0.3} strokeLinecap='butt'></line>
     })
 
@@ -49,9 +53,9 @@ export default function FloorPlan({geometry}: {geometry: FloorGeometry}) {
         const entrance_label = entrance.entrance_id.slice(-2)
 
         if (entrance_point.x === 0) {
-                return <text x={entrance_point.x - 0.5} y={entrance_point.y} textAnchor="end" fontSize={0.5}>E_{entrance_label}</text>
+                return <text key={entrance.entrance_id} x={entrance_point.x - 0.5} y={entrance_point.y} textAnchor="end" fontSize={0.5}>E_{entrance_label}</text>
         }else {
-            return <text x={entrance_point.x + 0.5} y={entrance_point.y} textAnchor="start" fontSize={0.5}>E_{entrance_label}</text>
+            return <text key={entrance.entrance_id} x={entrance_point.x + 0.5} y={entrance_point.y} textAnchor="start" fontSize={0.5}>E_{entrance_label}</text>
         }
     })
 
@@ -66,6 +70,7 @@ export default function FloorPlan({geometry}: {geometry: FloorGeometry}) {
             {door_geometry}
             {entrance_geometry}
             {entrance_labels}
+            {children}
         </svg>
     )
 }

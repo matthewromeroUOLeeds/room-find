@@ -8,16 +8,21 @@ export type RoomGeometry = {
     room_label: Point,
 }
 
+//Which way the opening runs: 'horizontal' = a line along x (in a horizontal wall), 'vertical' = a line along y
+export type Orientation = 'horizontal' | 'vertical';
+
 //An entrance is a point that defines the location of the entrance to the building
 export type EntranceGeometry = {
     entrance_id: string,
     position: Point,
+    orientation: Orientation,
 }
 
 export type DoorGeometry = {
     room_id: string,
-    //the start and end points of the door (2 units wide)
-    position: Point
+    //the centre of the door opening (2 units wide)
+    position: Point,
+    orientation: Orientation,
 }
 
 //Floor geometry is the shape of the floor, including the outline, corridors, rooms, entrances, and doors
@@ -31,4 +36,27 @@ export type FloorGeometry = {
     rooms: RoomGeometry[],
     entrances: EntranceGeometry[],
     doors: DoorGeometry[],
+}
+
+//A navigation node is a point a route can pass through. Coordinates use the same space as FloorGeometry.
+export type NavigationNode = {
+    id: string,
+    type: 'entrance' | 'door' | 'corridor',
+    floor: string,
+    x: number,
+    y: number,
+    //only set on door nodes
+    room_id?: string,
+}
+
+//An undirected connection between two nodes. Weights are not stored; they are computed from coordinates at load time.
+export type NavigationEdge = {
+    from: string,
+    to: string,
+}
+
+export type NavigationGraph = {
+    building_id: string,
+    nodes: NavigationNode[],
+    edges: NavigationEdge[],
 }

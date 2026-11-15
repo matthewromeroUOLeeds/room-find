@@ -301,14 +301,16 @@
       "position": {
         "x": 0,
         "y": 7.5
-      }
+      },
+      "orientation": "vertical"
     },
     {
       "entrance_id": "entrance_02",
       "position": {
         "x": 30,
         "y": 7.5
-      }
+      },
+      "orientation": "vertical"
     }
   ],
   "doors": [
@@ -317,70 +319,80 @@
       "position": {
         "x": 3,
         "y": 6
-      }
+      },
+      "orientation": "horizontal"
     },
     {
       "room_id": "room_02",
       "position": {
         "x": 9,
         "y": 6
-      }
+      },
+      "orientation": "horizontal"
     },
     {
       "room_id": "room_03",
       "position": {
         "x": 15,
         "y": 6
-      }
+      },
+      "orientation": "horizontal"
     },
     {
       "room_id": "room_04",
       "position": {
         "x": 21,
         "y": 6
-      }
+      },
+      "orientation": "horizontal"
     },
     {
       "room_id": "room_05",
       "position": {
         "x": 27,
         "y": 6
-      }
+      },
+      "orientation": "horizontal"
     },
     {
       "room_id": "room_06",
       "position": {
         "x": 3,
         "y": 9
-      }
+      },
+      "orientation": "horizontal"
     },
     {
       "room_id": "room_07",
       "position": {
         "x": 9,
         "y": 9
-      }
+      },
+      "orientation": "horizontal"
     },
     {
       "room_id": "room_08",
       "position": {
         "x": 15,
         "y": 9
-      }
+      },
+      "orientation": "horizontal"
     },
     {
       "room_id": "room_09",
       "position": {
         "x": 21,
         "y": 9
-      }
+      },
+      "orientation": "horizontal"
     },
     {
       "room_id": "room_10",
       "position": {
         "x": 27,
         "y": 9
-      }
+      },
+      "orientation": "horizontal"
     }
   ]
 }
