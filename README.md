@@ -7,7 +7,7 @@ University building navigation: find a room and get a route to it, drawn on the 
 | Folder | What it is | Status |
 | --- | --- | --- |
 | `Data/` | Building definitions (`Buildings/<name>/building.json`) and the TypeScript generator that produces `floorplan.json` and `navigation.json` | Working |
-| `Frontend/` | React + TypeScript + Vite app that renders the floorplan as SVG (`FloorPlan.tsx`) | Floorplan rendering and graph overlay working |
+| `Frontend/` | React + TypeScript + Vite app that renders the floorplan as SVG (`FloorPlan.tsx`) | Floorplan, graph overlay, routing and basic pickers working |
 | `Backend/` | Reserved for a future API | Empty |
 
 ## Coordinates
@@ -49,12 +49,13 @@ npm install
 npm run dev        # dev server
 npm run build      # type-check and production build
 npm run lint
+npm test           # unit tests (Vitest)
 ```
 
 ## Roadmap
 
 1. ~~Render `floorplan.json` as SVG.~~ Done.
 2. ~~Generate a navigation graph (`navigation.json`) from the floorplan, with nodes on the same coordinates as the SVG.~~ Done; toggle "Show navigation graph" in the app to see it.
-3. Shortest-path routing with tests.
-4. Room and entrance pickers, route overlay.
+3. ~~Shortest-path routing with tests.~~ Done (`Frontend/src/routing.ts`).
+4. UI polish: basic From/To pickers and the route line exist; still to do are highlighting the destination room, accessibility, and a nicer layout.
 5. Later: multiple floors and buildings, backend.
