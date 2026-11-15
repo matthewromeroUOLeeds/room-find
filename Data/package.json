@@ -1,3 +1,12 @@
 {
-  "type": "module"
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "generate": "npm run build && node dist/produce_data.js"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "typescript": "~7.0.2"
+  }
 }
