@@ -1,0 +1,200 @@
+{
+  "building_id": "example_building",
+  "nodes": [
+    {
+      "id": "entrance_01",
+      "type": "entrance",
+      "floor": "ground",
+      "x": 0,
+      "y": 7.5
+    },
+    {
+      "id": "corridor_x_3",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 3,
+      "y": 7.5
+    },
+    {
+      "id": "corridor_x_9",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 9,
+      "y": 7.5
+    },
+    {
+      "id": "corridor_x_15",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 15,
+      "y": 7.5
+    },
+    {
+      "id": "corridor_x_21",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 21,
+      "y": 7.5
+    },
+    {
+      "id": "corridor_x_27",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 27,
+      "y": 7.5
+    },
+    {
+      "id": "entrance_02",
+      "type": "entrance",
+      "floor": "ground",
+      "x": 30,
+      "y": 7.5
+    },
+    {
+      "id": "door_room_01",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_01",
+      "x": 3,
+      "y": 6
+    },
+    {
+      "id": "door_room_02",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_02",
+      "x": 9,
+      "y": 6
+    },
+    {
+      "id": "door_room_03",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_03",
+      "x": 15,
+      "y": 6
+    },
+    {
+      "id": "door_room_04",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_04",
+      "x": 21,
+      "y": 6
+    },
+    {
+      "id": "door_room_05",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_05",
+      "x": 27,
+      "y": 6
+    },
+    {
+      "id": "door_room_06",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_06",
+      "x": 3,
+      "y": 9
+    },
+    {
+      "id": "door_room_07",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_07",
+      "x": 9,
+      "y": 9
+    },
+    {
+      "id": "door_room_08",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_08",
+      "x": 15,
+      "y": 9
+    },
+    {
+      "id": "door_room_09",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_09",
+      "x": 21,
+      "y": 9
+    },
+    {
+      "id": "door_room_10",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_10",
+      "x": 27,
+      "y": 9
+    }
+  ],
+  "edges": [
+    {
+      "from": "entrance_01",
+      "to": "corridor_x_3"
+    },
+    {
+      "from": "corridor_x_3",
+      "to": "corridor_x_9"
+    },
+    {
+      "from": "corridor_x_9",
+      "to": "corridor_x_15"
+    },
+    {
+      "from": "corridor_x_15",
+      "to": "corridor_x_21"
+    },
+    {
+      "from": "corridor_x_21",
+      "to": "corridor_x_27"
+    },
+    {
+      "from": "corridor_x_27",
+      "to": "entrance_02"
+    },
+    {
+      "from": "door_room_01",
+      "to": "corridor_x_3"
+    },
+    {
+      "from": "door_room_02",
+      "to": "corridor_x_9"
+    },
+    {
+      "from": "door_room_03",
+      "to": "corridor_x_15"
+    },
+    {
+      "from": "door_room_04",
+      "to": "corridor_x_21"
+    },
+    {
+      "from": "door_room_05",
+      "to": "corridor_x_27"
+    },
+    {
+      "from": "door_room_06",
+      "to": "corridor_x_3"
+    },
+    {
+      "from": "door_room_07",
+      "to": "corridor_x_9"
+    },
+    {
+      "from": "door_room_08",
+      "to": "corridor_x_15"
+    },
+    {
+      "from": "door_room_09",
+      "to": "corridor_x_21"
+    },
+    {
+      "from": "door_room_10",
+      "to": "corridor_x_27"
+    }
+  ]
+}
