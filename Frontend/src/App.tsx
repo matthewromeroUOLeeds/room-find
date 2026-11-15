@@ -2,7 +2,6 @@ import './App.css'
 import FloorPlan from './FloorPlan'
 
 import floorPlan_data from "../../Data/Buildings/Example_Building/floorplan.json" with {type: 'json'};
-import building_data from "../../Data/Buildings/Example_Building/building.json" with {type: 'json'};
 import type { FloorGeometry } from './types/floorplan';
 
 const floor_plan: FloorGeometry = floorPlan_data 
