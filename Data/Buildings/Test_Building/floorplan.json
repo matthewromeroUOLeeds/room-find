@@ -1,0 +1,160 @@
+{
+  "floor_id": "ground",
+  "width": 24,
+  "height": 24,
+  "outline": [
+    { "x": 0, "y": 0 },
+    { "x": 24, "y": 0 },
+    { "x": 24, "y": 24 },
+    { "x": 0, "y": 24 }
+  ],
+  "corridors": [
+    {
+      "id": "corridor_1",
+      "points": [
+        { "x": 0, "y": 6 },
+        { "x": 15, "y": 6 },
+        { "x": 15, "y": 24 },
+        { "x": 12, "y": 24 },
+        { "x": 12, "y": 9 },
+        { "x": 0, "y": 9 }
+      ]
+    }
+  ],
+  "rooms": [
+    {
+      "room_id": "room_01",
+      "room_points": [
+        { "x": 0, "y": 0 },
+        { "x": 6, "y": 0 },
+        { "x": 6, "y": 6 },
+        { "x": 0, "y": 6 }
+      ],
+      "room_label": { "x": 3, "y": 3 }
+    },
+    {
+      "room_id": "room_02",
+      "room_points": [
+        { "x": 6, "y": 0 },
+        { "x": 12, "y": 0 },
+        { "x": 12, "y": 6 },
+        { "x": 6, "y": 6 }
+      ],
+      "room_label": { "x": 9, "y": 3 }
+    },
+    {
+      "room_id": "room_03",
+      "room_points": [
+        { "x": 12, "y": 0 },
+        { "x": 24, "y": 0 },
+        { "x": 24, "y": 6 },
+        { "x": 12, "y": 6 }
+      ],
+      "room_label": { "x": 18, "y": 3 }
+    },
+    {
+      "room_id": "room_04",
+      "room_points": [
+        { "x": 0, "y": 9 },
+        { "x": 12, "y": 9 },
+        { "x": 12, "y": 16.5 },
+        { "x": 0, "y": 16.5 }
+      ],
+      "room_label": { "x": 6, "y": 12.75 }
+    },
+    {
+      "room_id": "room_05",
+      "room_points": [
+        { "x": 0, "y": 16.5 },
+        { "x": 12, "y": 16.5 },
+        { "x": 12, "y": 24 },
+        { "x": 0, "y": 24 }
+      ],
+      "room_label": { "x": 6, "y": 20.25 }
+    },
+    {
+      "room_id": "room_06",
+      "room_points": [
+        { "x": 15, "y": 6 },
+        { "x": 24, "y": 6 },
+        { "x": 24, "y": 12 },
+        { "x": 15, "y": 12 }
+      ],
+      "room_label": { "x": 19.5, "y": 9 }
+    },
+    {
+      "room_id": "room_07",
+      "room_points": [
+        { "x": 15, "y": 12 },
+        { "x": 24, "y": 12 },
+        { "x": 24, "y": 18 },
+        { "x": 15, "y": 18 }
+      ],
+      "room_label": { "x": 19.5, "y": 15 }
+    },
+    {
+      "room_id": "room_08",
+      "room_points": [
+        { "x": 15, "y": 18 },
+        { "x": 24, "y": 18 },
+        { "x": 24, "y": 24 },
+        { "x": 15, "y": 24 }
+      ],
+      "room_label": { "x": 19.5, "y": 21 }
+    }
+  ],
+  "entrances": [
+    {
+      "entrance_id": "entrance_01",
+      "position": { "x": 0, "y": 7.5 },
+      "orientation": "vertical"
+    },
+    {
+      "entrance_id": "entrance_02",
+      "position": { "x": 13.5, "y": 24 },
+      "orientation": "horizontal"
+    }
+  ],
+  "doors": [
+    {
+      "room_id": "room_01",
+      "position": { "x": 3, "y": 6 },
+      "orientation": "horizontal"
+    },
+    {
+      "room_id": "room_02",
+      "position": { "x": 9, "y": 6 },
+      "orientation": "horizontal"
+    },
+    {
+      "room_id": "room_03",
+      "position": { "x": 13.5, "y": 6 },
+      "orientation": "horizontal"
+    },
+    {
+      "room_id": "room_04",
+      "position": { "x": 12, "y": 12.75 },
+      "orientation": "vertical"
+    },
+    {
+      "room_id": "room_05",
+      "position": { "x": 12, "y": 20.25 },
+      "orientation": "vertical"
+    },
+    {
+      "room_id": "room_06",
+      "position": { "x": 15, "y": 10.5 },
+      "orientation": "vertical"
+    },
+    {
+      "room_id": "room_07",
+      "position": { "x": 15, "y": 15 },
+      "orientation": "vertical"
+    },
+    {
+      "room_id": "room_08",
+      "position": { "x": 15, "y": 21 },
+      "orientation": "vertical"
+    }
+  ]
+}

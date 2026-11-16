@@ -1,0 +1,158 @@
+{
+  "building_id": "corner_hall",
+  "nodes": [
+    {
+      "id": "entrance_01",
+      "type": "entrance",
+      "floor": "ground",
+      "x": 0,
+      "y": 7.5
+    },
+    {
+      "id": "corridor_top_1",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 3,
+      "y": 7.5
+    },
+    {
+      "id": "corridor_top_2",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 9,
+      "y": 7.5
+    },
+    {
+      "id": "corridor_bend",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 13.5,
+      "y": 7.5
+    },
+    {
+      "id": "corridor_vertical_1",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 13.5,
+      "y": 10.5
+    },
+    {
+      "id": "corridor_vertical_2",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 13.5,
+      "y": 12.75
+    },
+    {
+      "id": "corridor_vertical_3",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 13.5,
+      "y": 15
+    },
+    {
+      "id": "corridor_vertical_4",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 13.5,
+      "y": 20.25
+    },
+    {
+      "id": "corridor_vertical_5",
+      "type": "corridor",
+      "floor": "ground",
+      "x": 13.5,
+      "y": 21
+    },
+    {
+      "id": "entrance_02",
+      "type": "entrance",
+      "floor": "ground",
+      "x": 13.5,
+      "y": 24
+    },
+    {
+      "id": "room_01",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_01",
+      "x": 3,
+      "y": 6
+    },
+    {
+      "id": "room_02",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_02",
+      "x": 9,
+      "y": 6
+    },
+    {
+      "id": "room_03",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_03",
+      "x": 13.5,
+      "y": 6
+    },
+    {
+      "id": "room_04",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_04",
+      "x": 12,
+      "y": 12.75
+    },
+    {
+      "id": "room_05",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_05",
+      "x": 12,
+      "y": 20.25
+    },
+    {
+      "id": "room_06",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_06",
+      "x": 15,
+      "y": 10.5
+    },
+    {
+      "id": "room_07",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_07",
+      "x": 15,
+      "y": 15
+    },
+    {
+      "id": "room_08",
+      "type": "door",
+      "floor": "ground",
+      "room_id": "room_08",
+      "x": 15,
+      "y": 21
+    }
+  ],
+  "edges": [
+    { "from": "entrance_01", "to": "corridor_top_1" },
+    { "from": "corridor_top_1", "to": "corridor_top_2" },
+    { "from": "corridor_top_2", "to": "corridor_bend" },
+    { "from": "corridor_bend", "to": "corridor_vertical_1" },
+    { "from": "corridor_vertical_1", "to": "corridor_vertical_2" },
+    { "from": "corridor_vertical_2", "to": "corridor_vertical_3" },
+    { "from": "corridor_vertical_3", "to": "corridor_vertical_4" },
+    { "from": "corridor_vertical_4", "to": "corridor_vertical_5" },
+    { "from": "corridor_vertical_5", "to": "entrance_02" },
+    { "from": "room_01", "to": "corridor_top_1" },
+    { "from": "room_02", "to": "corridor_top_2" },
+    { "from": "room_03", "to": "corridor_bend" },
+    { "from": "room_04", "to": "corridor_vertical_2" },
+    { "from": "room_05", "to": "corridor_vertical_4" },
+    { "from": "room_06", "to": "corridor_vertical_1" },
+    { "from": "room_07", "to": "corridor_vertical_3" },
+    { "from": "room_08", "to": "corridor_vertical_5" }
+  ]
+}
