@@ -1,3 +1,26 @@
+export type Floor = {
+    id: string,
+    name: string
+}
+export type Room = {
+    id: string,
+    name: string,
+    floor: string
+}
+export type Entrance = {
+    id: string,
+    name: string,
+    floor: string
+}
+
+export type Building = {
+    id: string,
+    name: string,
+    floors: Floor[],
+    rooms: Room[],
+    entrances: Entrance[]
+}
+
 //A point is an object with x and y coordinates
 export type Point = {x: number, y: number};
 
